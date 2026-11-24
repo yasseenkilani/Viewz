@@ -20,7 +20,8 @@ def plan(cls,mini=False):
 <path class="route" d="{p['route']}" pathLength="1"/>{cam}
 </svg>'''
 LOGO=open('logo.svg').read()
-PAGES=[('index','Home'),('how-it-works','How it works'),('samples','Samples'),('why-viewz','Why Viewz'),('who-its-for','Who it\'s for'),('get-started','Get a quote')]
+PAGES=[('index','Home'),('how-it-works','How it works'),('why-viewz','Why Viewz'),('who-its-for','Who it\'s for'),('get-started','Request a quote')]
+NAV=[('index.html#screening','Screening room'),('index.html#process','Behind the film'),('how-it-works.html','How it works'),('index.html#questions','FAQs')]
 SHELL='''<!doctype html>
 <html lang="en" data-type="service">
 <head>
@@ -34,13 +35,14 @@ SHELL='''<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="studio.css">
 </head>
 <body class="@@BODY@@">
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav@@NAVDARK@@" id="nav">
   <a class="brand" href="index.html" aria-label="Viewz home"><img class="lg lg-l" src="img/logo-light.png" alt="Viewz"><img class="lg lg-d" src="img/logo-dark.png" alt=""></a>
   <nav aria-label="Main">@@LINKS@@</nav>
-  <div class="nav-r"><a class="btn btn-sm" href="get-started.html">Send a listing</a><button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button></div>
+  <div class="nav-r"><a class="btn btn-sm" href="get-started.html">Request a quote</a><button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button></div>
   <div class="menu" id="menu" hidden><nav aria-label="Menu">@@MLINKS@@</nav></div>
 </header>
 <main id="main">
@@ -54,6 +56,7 @@ SHELL='''<!doctype html>
   </div>
 </footer>
 <script src="main.js"></script>
+<script src="studio.js"></script>
 </body></html>'''
 for f in glob.glob('pages/*.html'):
     name=os.path.basename(f)[:-5]; src=open(f).read()
@@ -63,8 +66,8 @@ for f in glob.glob('pages/*.html'):
     body=re.sub(r'<!--(TITLE|DESC|NOINDEX):?.*?-->\n?','',src).replace('<!--DARKNAV-->\n','')
     body=body.replace('{{PLAN_HERO}}',plan('plan-hero')).replace('{{PLAN_STAGE}}',plan('plan-stage')).replace('{{PLAN_MINI}}',plan('plan-mini',True))
     cur=' aria-current="page"'
-    links="".join('<a href="%s.html"%s>%s</a>'%(n,cur if n==name else '',l) for n,l in PAGES[1:])
-    mlinks=links+'<a href="get-started.html#faq">FAQs</a>'
+    links="".join('<a href="%s"%s>%s</a>'%(h,cur if h==name+'.html' else '',l) for h,l in NAV)
+    mlinks=links+'<a href="get-started.html">Request a quote</a>'
     flinks="".join(f'<a href="{n}.html">{l}</a>' for n,l in PAGES)
     h=SHELL.replace('@@TITLE@@',title).replace('@@DESC@@',desc).replace('@@BODY@@','page-'+name).replace('@@NAVDARK@@',' on-dark' if dark else '').replace('@@LINKS@@',links).replace('@@FLINKS@@',flinks).replace('@@MLINKS@@',mlinks).replace('@@LOGO@@',LOGO).replace('@@BODY_HTML@@',body)
     if noidx: h=h.replace('<meta name="theme-color"','<meta name="robots" content="noindex,nofollow"><meta name="theme-color"',1)
