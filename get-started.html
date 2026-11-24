@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-type="service">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Get a quote | Send Viewz a listing</title>
+<meta name="description" content="Send a listing link and Viewz replies with a fixed price, a delivery date and the route for your walkthrough. Nothing is charged until you approve.">
+<meta name="page-type" content="service"><meta name="site-kind" content="other">
+<meta property="og:title" content="Get a quote | Send Viewz a listing"><meta property="og:description" content="Send a listing link and Viewz replies with a fixed price, a delivery date and the route for your walkthrough. Nothing is charged until you approve."><meta property="og:type" content="website"><meta property="og:image" content="img/living.jpg">
+<meta name="theme-color" content="#0E1E14">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-get-started">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <a class="brand" href="index.html" aria-label="Viewz home"><img class="lg lg-l" src="img/logo-light.png" alt="Viewz"><img class="lg lg-d" src="img/logo-dark.png" alt=""></a>
+  <nav aria-label="Main"><a href="how-it-works.html">How it works</a><a href="samples.html">Samples</a><a href="why-viewz.html">Why Viewz</a><a href="who-its-for.html">Who it's for</a><a href="get-started.html" aria-current="page">Get a quote</a></nav>
+  <div class="nav-r"><a class="btn btn-sm" href="get-started.html">Send a listing</a><button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button></div>
+  <div class="menu" id="menu" hidden><nav aria-label="Menu"><a href="how-it-works.html">How it works</a><a href="samples.html">Samples</a><a href="why-viewz.html">Why Viewz</a><a href="who-its-for.html">Who it's for</a><a href="get-started.html" aria-current="page">Get a quote</a><a href="get-started.html#faq">FAQs</a></nav></div>
+</header>
+<main id="main">
+<section class="pagehead short">
+  <div class="wrap">
+    <p class="eyebrow">Get a quote</p>
+    <h1>Send a listing. <em>Get a quote.</em></h1>
+    <p class="lede">A Viewz producer checks your listing and floor plan, then replies with a fixed price, a delivery date and the route we would film. Nothing is charged until you approve.</p>
+  </div>
+</section>
+<section class="start">
+  <div class="wrap start-grid">
+    <form class="form" id="orderForm" novalidate>
+      <ol class="next-steps"><li><b>You send</b> the link and where to reply.</li><li><b>We reply within one working day</b> with the price, delivery date and route.</li><li><b>You approve it</b>, we build the walkthrough and you sign it off before it goes anywhere.</li></ol>
+      <label>Listing link<input name="link" type="url" inputmode="url" placeholder="https://" required autocomplete="off"><em class="err" data-for="link"></em></label>
+      <div class="two">
+        <label>Your name<input name="name" type="text" autocomplete="name" required><em class="err" data-for="name"></em></label>
+        <label>Email <small class="opt">(optional)</small><input name="email" type="email" autocomplete="email"><em class="err" data-for="email"></em></label>
+      </div>
+      <label>WhatsApp number<input name="wa" type="tel" inputmode="tel" autocomplete="tel" placeholder="+971 50 123 4567" required><em class="err" data-for="wa"></em></label>
+      <label class="consent"><input name="consent" type="checkbox" value="yes" required><span>Message me on WhatsApp about this quote. I can say stop at any time.</span><em class="err" data-for="consent"></em></label>
+      <div class="hp" aria-hidden="true"><label>Leave this empty<input name="hp_x7" type="text" tabindex="-1" autocomplete="off"></label></div>
+      <button class="btn btn-lg" type="submit">Request a quote</button>
+      <p class="privacy-note">We use these details only to reply about your quote. We never sell them. <a href="privacy.html">Read how we handle your details.</a></p>
+      <div class="verify" id="verify" hidden>
+        <p><b>Check your WhatsApp.</b> We sent a 6-digit code to <span id="vNum"></span>. Enter it to confirm the number is yours.</p>
+        <label>Code<input id="vCode" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code"></label>
+        <button class="btn" type="button" id="vBtn">Confirm</button>
+      </div>
+      <p class="wa-or">Prefer to chat? <a class="wa-link" data-wa data-wa-text="Hi Viewz, I would like a quote for this listing: " href="#">Message us on WhatsApp</a> and paste your listing link. <small class="wa-off" hidden>(The WhatsApp number goes live at launch.)</small></p>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+    <div class="faq" id="faq">
+      <h2>Before you send a link.</h2>
+      <details><summary>What do I need to send?</summary><p>A link to the listing. If the floor plan is not supplied, we look for the developer's published plan ourselves. If we cannot find one we will tell you before quoting.</p></details>
+      <details><summary>Do you visit the property?</summary><p>No. No site visit, no scanning, no setup on your side.</p></details>
+      <details><summary>Is the video real footage?</summary><p>No. It is an AI-generated walkthrough built from the floor plan and the listing photos. We label it that way.</p></details>
+      <details><summary>What if my listing has few photos?</summary><p>We check every walkthrough against the floor plan and your listing photos. If we can't verify a room, we leave it out.</p></details>
+      <details><summary>Will it show the pool or gym?</summary><p>No. Building amenities are always left out. The video is about the home.</p></details>
+      <details><summary>What does it cost?</summary><p>You see a fixed price in our reply, before you approve anything. No hidden extras.</p></details>
+      <details><summary>Which formats do I get?</summary><p>Landscape and vertical.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div><a class="brand light" href="index.html"><img class="lg lg-d" src="img/logo-dark.png" alt="Viewz"></a><p>AI walkthrough videos for Dubai property. Videos are AI-generated and labelled as such.</p></div>
+    <nav aria-label="Footer"><a href="index.html">Home</a><a href="how-it-works.html">How it works</a><a href="samples.html">Samples</a><a href="why-viewz.html">Why Viewz</a><a href="who-its-for.html">Who it's for</a><a href="get-started.html">Get a quote</a></nav>
+    <p class="small"><a href="privacy.html">Privacy</a> · <a data-wa data-wa-text="Hi Viewz, " href="#">WhatsApp</a> · viewz.me · © 2026 Viewz</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body></html>

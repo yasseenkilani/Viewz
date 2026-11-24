@@ -1,0 +1,41 @@
+<!--TITLE:Pay securely | Viewz-->
+<!--DESC:Pay for your approved Viewz walkthrough on a secure payment page. Card details are entered with our payment provider, never on this site.-->
+<!--NOINDEX-->
+<section class="pagehead short">
+  <div class="wrap">
+    <p class="eyebrow">Secure payment</p>
+    <h1>Approve and <em>pay.</em></h1>
+    <p class="lede">You only land here from the link we send after you accept a quote. Check the details, then pay on our payment provider's secure page.</p>
+  </div>
+</section>
+<section class="start">
+  <div class="wrap pay-grid">
+    <div class="pay-card" id="payCard">
+      <p class="pay-flag" id="payFlag" hidden>Preview example. Not a real quote.</p>
+      <div id="payEmpty" class="pay-empty">
+        <h2>This page opens from your payment link.</h2>
+        <p>After you approve a quote we send you a personal link on WhatsApp and email. Use that link to pay. No link yet? <a href="get-started.html">Request a quote</a>.</p>
+      </div>
+      <div id="payBody" hidden>
+        <h2>Your quote</h2>
+        <dl class="pay-dl">
+          <div><dt>Listing</dt><dd id="pListing">-</dd></div>
+          <div><dt>Delivery</dt><dd id="pDelivery">-</dd></div>
+          <div><dt>Formats</dt><dd id="pFormats">-</dd></div>
+          <div class="total"><dt>Total</dt><dd id="pTotal">-</dd></div>
+        </dl>
+        <button class="btn btn-lg" type="button" id="payBtn">Pay securely</button>
+        <p class="form-msg" id="payMsg" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+    <aside class="pay-trust">
+      <h2>How your payment is protected.</h2>
+      <ul>
+        <li><b>We never see your card.</b> You enter it on our payment provider's own secure page, not on viewz.me.</li>
+        <li><b>The price is fixed.</b> It is set on our side from the quote you approved, and cannot be changed from this page.</li>
+        <li><b>You get a receipt.</b> The payment provider emails it to you straight away.</li>
+        <li><b>Check the address.</b> The payment page opens on checkout.stripe.com. If it opens anywhere else, close it and message us.</li>
+      </ul>
+    </aside>
+  </div>
+</section>

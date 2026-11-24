@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+*.pyc
+shots/
+.env
+.env.*
+*.key
+*.pem
+node_modules/
+index.src.html
+.taste-skill/

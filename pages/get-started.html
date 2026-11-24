@@ -1,0 +1,43 @@
+<!--TITLE:Get a quote | Send Viewz a listing-->
+<!--DESC:Send a listing link and Viewz replies with a fixed price, a delivery date and the route for your walkthrough. Nothing is charged until you approve.-->
+<section class="pagehead short">
+  <div class="wrap">
+    <p class="eyebrow">Get a quote</p>
+    <h1>Send a listing. <em>Get a quote.</em></h1>
+    <p class="lede">A Viewz producer checks your listing and floor plan, then replies with a fixed price, a delivery date and the route we would film. Nothing is charged until you approve.</p>
+  </div>
+</section>
+<section class="start">
+  <div class="wrap start-grid">
+    <form class="form" id="orderForm" novalidate>
+      <ol class="next-steps"><li><b>You send</b> the link and where to reply.</li><li><b>We reply within one working day</b> with the price, delivery date and route.</li><li><b>You approve it</b>, we build the walkthrough and you sign it off before it goes anywhere.</li></ol>
+      <label>Listing link<input name="link" type="url" inputmode="url" placeholder="https://" required autocomplete="off"><em class="err" data-for="link"></em></label>
+      <div class="two">
+        <label>Your name<input name="name" type="text" autocomplete="name" required><em class="err" data-for="name"></em></label>
+        <label>Email <small class="opt">(optional)</small><input name="email" type="email" autocomplete="email"><em class="err" data-for="email"></em></label>
+      </div>
+      <label>WhatsApp number<input name="wa" type="tel" inputmode="tel" autocomplete="tel" placeholder="+971 50 123 4567" required><em class="err" data-for="wa"></em></label>
+      <label class="consent"><input name="consent" type="checkbox" value="yes" required><span>Message me on WhatsApp about this quote. I can say stop at any time.</span><em class="err" data-for="consent"></em></label>
+      <div class="hp" aria-hidden="true"><label>Leave this empty<input name="hp_x7" type="text" tabindex="-1" autocomplete="off"></label></div>
+      <button class="btn btn-lg" type="submit">Request a quote</button>
+      <p class="privacy-note">We use these details only to reply about your quote. We never sell them. <a href="privacy.html">Read how we handle your details.</a></p>
+      <div class="verify" id="verify" hidden>
+        <p><b>Check your WhatsApp.</b> We sent a 6-digit code to <span id="vNum"></span>. Enter it to confirm the number is yours.</p>
+        <label>Code<input id="vCode" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code"></label>
+        <button class="btn" type="button" id="vBtn">Confirm</button>
+      </div>
+      <p class="wa-or">Prefer to chat? <a class="wa-link" data-wa data-wa-text="Hi Viewz, I would like a quote for this listing: " href="#">Message us on WhatsApp</a> and paste your listing link. <small class="wa-off" hidden>(The WhatsApp number goes live at launch.)</small></p>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+    <div class="faq" id="faq">
+      <h2>Before you send a link.</h2>
+      <details><summary>What do I need to send?</summary><p>A link to the listing. If the floor plan is not supplied, we look for the developer's published plan ourselves. If we cannot find one we will tell you before quoting.</p></details>
+      <details><summary>Do you visit the property?</summary><p>No. No site visit, no scanning, no setup on your side.</p></details>
+      <details><summary>Is the video real footage?</summary><p>No. It is an AI-generated walkthrough built from the floor plan and the listing photos. We label it that way.</p></details>
+      <details><summary>What if my listing has few photos?</summary><p>We check every walkthrough against the floor plan and your listing photos. If we can't verify a room, we leave it out.</p></details>
+      <details><summary>Will it show the pool or gym?</summary><p>No. Building amenities are always left out. The video is about the home.</p></details>
+      <details><summary>What does it cost?</summary><p>You see a fixed price in our reply, before you approve anything. No hidden extras.</p></details>
+      <details><summary>Which formats do I get?</summary><p>Landscape and vertical.</p></details>
+    </div>
+  </div>
+</section>
